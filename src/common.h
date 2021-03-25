@@ -1,12 +1,9 @@
-#ifndef ITP1_4_H_
-#define ITP1_4_H_
+#ifndef COMMON_H_
+#define COMMON_H_
 
 /*============================================================================*/
 /* include */
 /*============================================================================*/
-#include <stdio.h>
-#include <float.h>
-#include <stdbool.h>
 
 /*============================================================================*/
 /* typedef */
@@ -15,12 +12,6 @@
 /*============================================================================*/
 /* define */
 /*============================================================================*/
-#define PI 3.141592653589
-#define PLUS_OPRATION '+'
-#define MINUS_OPRATION '-'
-#define MULTIPLY_OPRATION '*'
-#define DIVIDE_OPRATION '/'
-#define QUESTION_CHARACTER '?'
 
 /*============================================================================*/
 /* enum */
@@ -45,10 +36,8 @@
 /*============================================================================*/
 /* Macro */
 /*============================================================================*/
-void divisionCalculationDisplay(void);
-void circleCalculationDisplay(void);
-void calculationDisplay(void);
-void maxAndMinValDisplay(void);
+int getValMax(int *intAry, int count);
+int getValMin(int *intAry, int count);
 
 #endif
 
