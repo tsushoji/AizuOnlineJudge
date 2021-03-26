@@ -19,3 +19,13 @@ int getValMin(int *intAry, int count) {
 	}
 	return intRtn;
 }
+
+double getDoubleValMax(double *intAry, int count) {
+	double intRtn = intAry[0];
+	for (int i = 0; i < count; i++) {
+		if (intRtn < intAry[i]) {
+			intRtn = intAry[i];
+		}
+	}
+	return intRtn;
+}

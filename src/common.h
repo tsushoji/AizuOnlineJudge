@@ -38,6 +38,7 @@
 /*============================================================================*/
 int getValMax(int *intAry, int count);
 int getValMin(int *intAry, int count);
+double getDoubleValMax(double *intAry, int count);
 
 #endif
 
