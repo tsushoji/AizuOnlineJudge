@@ -13,5 +13,6 @@
 int main()
 {
     fibonacciNumber();
+    matrixChainMultiplication();
     return 0;
 }
