@@ -12,20 +12,24 @@
 /*============================================================================*/
 int main()
 {
-	struct Star star[STAR_NUM];
-    int test[STAR_NUM];
-    int count;
-    char entranceChar[STAR_NUM];
-    char exitChar[STAR_NUM];
-    scanf("%d", &count);
-    scanf("%s\n", &entranceChar);
-    scanf("%s", &exitChar);
-    for(int i = 0; i < count; i++){
-        star[i].num = i + 1;
-        star[i].entrance = entranceChar[i];
-        star[i].exit = exitChar[i];
-    }
+	int N;
+    char s[STAR_NUM];
+    char t[STAR_NUM];
+    // todo 解決策検討必要
+    // コンパイルは通るが、実行すると、配列のサイズが大きいため、EXE_BAD_ACCESS例外が発生
+    int memo[STAR_NUM][ASKII_CHAR_NUM];
 
-    // アルゴリズムを思いつかないため、保留
+    scanf("%d%s%s", &N, s, t);
+
+    memo[0][s[0] - 'a'] = 1;
+
+    for(int i = 1; i < N; i++){
+        for(int j = 0; j < ASKII_CHAR_NUM; j++){
+            memo[i][j] = memo[i - 1][j];
+        }
+        memo[i][s[i] - 'a'] += memo[i][t[i] - 'a'];
+        memo[i][s[i] - 'a'] %= DIVIDE_NUM;
+    }
+    printf("%d\n", memo[N - 2][t[N - 1] - 'a']);
 	return 0;
 }
